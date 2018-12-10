@@ -1,0 +1,33 @@
+﻿@model DrumGenerator.Models.Note
+@{
+}
+
+<html>
+<head>
+    <title>Drum Generator</title>
+</head>
+
+<body>
+
+    @*@Model.HiHat@Model.HiHat@Model.HiHat@Model.HiHat@Model.HiHat@Model.HiHat@Model.HiHat@Model.HiHat<br />
+        @Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty<br />
+        @Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty<br />
+        @Model.Empty@Model.Empty@Model.Snare@Model.Empty@Model.Empty@Model.Empty@Model.Snare@Model.Empty<br />
+        @Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty<br />
+        @Model.Kick@Model.Empty@Model.Empty@Model.Empty@Model.Kick@Model.Kick@Model.Empty@Model.Empty<br />*@
+
+    <code>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;<br />
+        C||@Model.HiHatLine()--|@Model.HiHatLine()--|<br />
+        C||@Model.ClearLine()--|@Model.ClearLine()--|<br />
+        C||@Model.ClearLine()--|@Model.ClearLine()--|<br />
+        C||@Model.SnareLine()--|@Model.SnareLine()--|<br />
+        C||@Model.ClearLine()--|@Model.ClearLine()--|<br />
+        C||@Model.KickLine()--|@Model.KickLine()--|<br />
+    </code>
+
+</body>
+
+</html>
