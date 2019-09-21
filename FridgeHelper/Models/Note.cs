@@ -1,114 +1,75 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DrumGenerator.Models
+﻿namespace DrumGenerator.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
     public class Note
     {
-        public string Empty { get; set; } = "----";
+        public string EmptyNote { get; set; } = "----";
         public string HiHat { get; set; } = "--42";
         public string Kick { get; set; } = "--36";
         public string Snare { get; set; } = "--38";
-        ////private readonly string eLine = "   E   E   E   E   E   E   E   E";
-
-        ////public string ELine()
-        ////{
-        ////    return eLine;
-        ////}
-
+        
         public string RandomLine()
         {
-            Random random = new Random();
-
             List<string> listOfNotes = new List<string>()
             {
-                Empty,
+                EmptyNote,
                 HiHat,
                 Kick,
                 Snare
             };
-
-            string stringOfNotes = "";
-
-            for (int i = 0; i < 8; i++)
-            {
-#pragma warning disable S1643 // Strings should not be concatenated using '+' in a loop
-                stringOfNotes += listOfNotes[random.Next(0, listOfNotes.Count)].ToString();
-#pragma warning restore S1643 // Strings should not be concatenated using '+' in a loop
-            }
-
-            return stringOfNotes;
+            return GenerateNotes(listOfNotes);
         }
 
         public string ClearLine()
         {
-            return Empty + Empty + Empty + Empty + Empty + Empty + Empty + Empty;
+            return EmptyNote + EmptyNote + EmptyNote + EmptyNote + EmptyNote + EmptyNote + EmptyNote + EmptyNote;
         }
 
         public string SnareLine()
         {
-            Random random = new Random();
-
             List<string> listOfNotes = new List<string>()
             {
-                Empty,
+                EmptyNote,
                 Snare
             };
-
-            string stringOfNotes = "";
-
-            for (int i = 0; i < 8; i++)
-            {
-#pragma warning disable S1643 // Strings should not be concatenated using '+' in a loop
-                stringOfNotes += listOfNotes[random.Next(0, listOfNotes.Count)].ToString();
-#pragma warning restore S1643 // Strings should not be concatenated using '+' in a loop
-            }
-
-            return stringOfNotes;
+            return GenerateNotes(listOfNotes);
         }
 
         public string KickLine()
         {
-            Random random = new Random();
-
             List<string> listOfNotes = new List<string>()
             {
-                Empty,
+                EmptyNote,
                 Kick
             };
-
-            string stringOfNotes = "";
-
-            for (int i = 0; i < 8; i++)
-            {
-#pragma warning disable S1643 // Strings should not be concatenated using '+' in a loop
-                stringOfNotes += listOfNotes[random.Next(0, listOfNotes.Count)].ToString();
-#pragma warning restore S1643 // Strings should not be concatenated using '+' in a loop
-            }
-
-            return stringOfNotes;
+            return GenerateNotes(listOfNotes);
         }
 
         public string HiHatLine()
         {
-            Random random = new Random();
-
             List<string> listOfNotes = new List<string>()
             {
-                Empty,
+                EmptyNote,
                 HiHat
             };
+            return GenerateNotes(listOfNotes);
+        }
+
+        private string GenerateNotes(List<string> listOfNotes)
+        {
+            Random random = new Random();
 
             string stringOfNotes = "";
+            StringBuilder stringOfNotesBuilder = new StringBuilder(stringOfNotes);
 
             for (int i = 0; i < 8; i++)
             {
-#pragma warning disable S1643 // Strings should not be concatenated using '+' in a loop
-                stringOfNotes += listOfNotes[random.Next(0, listOfNotes.Count)].ToString();
-#pragma warning restore S1643 // Strings should not be concatenated using '+' in a loop
+                stringOfNotesBuilder.Append(listOfNotes[random.Next(0, listOfNotes.Count)].ToString());
             }
 
-            return stringOfNotes;
+            return stringOfNotesBuilder.ToString();
         }
     }
 }

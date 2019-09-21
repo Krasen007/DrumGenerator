@@ -4,9 +4,9 @@ namespace DrumGenerator.Views
 
     public class IndexModel : PageModel
     {
-        public void OnGet()
+        public static void OnGet()
         {
-            ////
+            //// Left empty for future implementation.
         }
     }
 }

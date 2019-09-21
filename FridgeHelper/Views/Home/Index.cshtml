@@ -1,33 +1,76 @@
 ﻿@model DrumGenerator.Models.Note
 @{
 }
-
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Drum Generator</title>
+    <title>Krasen's Random Drum Generator</title>
+    <style type="text/css">
+        html {
+            height: 100%;
+            width: 100%;
+        }
+
+        #feature {
+            width: 960px;
+            margin: 95px auto 0 auto;
+            overflow: auto;
+        }
+
+        #content {
+            font-family: "Segoe UI";
+            font-weight: normal;
+            font-size: 20px;
+            color: #1dd9d9;
+            vertical-align: middle;
+        }
+
+            #content h1 {
+                font-family: "Segoe UI Light";
+                color: #75c5c5;
+                font-weight: normal;
+                font-size: 70px;
+                line-height: 48pt;
+                width: 800px;
+                padding-bottom: 15px;
+            }
+
+        p a,
+        p a:visited,
+        p a:active,
+        p a:hover {
+            color: #75c5c5;
+        }
+
+        body {
+            background: #808080;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
 </head>
 
 <body>
+    <div id="feature">
+        <div id="content">
+            <h1>Welcome to my Online Random Drum Generator.</h1>
+            <p>Please visit <a href="https://github.com/Krasen007/DrumGenerator" alt="DrumGenerator">https://github.com/Krasen007/DrumGenerator</a> for source.</p>
 
-    @*@Model.HiHat@Model.HiHat@Model.HiHat@Model.HiHat@Model.HiHat@Model.HiHat@Model.HiHat@Model.HiHat<br />
-        @Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty<br />
-        @Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty<br />
-        @Model.Empty@Model.Empty@Model.Snare@Model.Empty@Model.Empty@Model.Empty@Model.Snare@Model.Empty<br />
-        @Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty@Model.Empty<br />
-        @Model.Kick@Model.Empty@Model.Empty@Model.Empty@Model.Kick@Model.Kick@Model.Empty@Model.Empty<br />*@
+            <p>This page generates random drum patterns that you can inport in Guitar Pro.</p>
+            <p>The numbers represent midi notes.</p>
+            <p>Press F5 to get new random drum pattern.</p>
 
-    <code>
-
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;<br />
-        C||@Model.HiHatLine()--|@Model.HiHatLine()--|<br />
-        C||@Model.ClearLine()--|@Model.ClearLine()--|<br />
-        C||@Model.ClearLine()--|@Model.ClearLine()--|<br />
-        C||@Model.SnareLine()--|@Model.SnareLine()--|<br />
-        C||@Model.ClearLine()--|@Model.ClearLine()--|<br />
-        C||@Model.KickLine()--|@Model.KickLine()--|<br />
-    </code>
-
+            <code>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;<br />
+                C||@Model.HiHatLine()--|@Model.HiHatLine()--|<br />
+                C||@Model.ClearLine()--|@Model.ClearLine()--|<br />
+                C||@Model.ClearLine()--|@Model.ClearLine()--|<br />
+                C||@Model.SnareLine()--|@Model.SnareLine()--|<br />
+                C||@Model.ClearLine()--|@Model.ClearLine()--|<br />
+                C||@Model.KickLine()--|@Model.KickLine()--|<br />
+            </code>
+        </div>
+    </div>
 </body>
-
 </html>
